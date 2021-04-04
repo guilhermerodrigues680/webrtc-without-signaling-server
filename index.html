@@ -1,71 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>Document</title>
+  <title>WebRTC</title>
 </head>
 <body>
+  <h1>WebRTC sem servidor de sinalização</h1>
 
-  <table width="100%" border="1">
-    <tr>
-      <th>#</th>
-      <th>initiator</th>
-      <th>peer</th>
-    </tr>
-    <tr>
-      <td>step 1</td>
-      <td>
-        <input type="button" value="create offer" onclick="step_1_initiator_create_offer()">
-        <input id="createdOffer" type="text" hidden>
-      </td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>step 2</td>
-      <td></td>
-      <td>
-        <input id="remoteOffer" type="text" placeholder="offer from initiator">
-        <input type="button" value="accept offer" onclick="step_2_accept_remote_offer()">
-      </td>
-    </tr>
-    <tr>
-      <td>step 3</td>
-      <td></td>
-      <td>
-        <input type="button" value="create answer" onclick="step_3_create_answer()">
-        <input id="createdAnswer" type="text" hidden>
-      </td>
-    </tr>
-    <tr>
-      <td>step 4</td>
-      <td>
-        <input id="remoteAnswer" type="text" placeholder="answer from peer">
-        <input type="button" value="accept answer" onclick="step_4_accept_answer()">
-      </td>
-      <td></td>
-    </tr>
-  </table>
-  <hr>
-  <input id="text" type="text">
-  <input type="button" value="send" onclick="send_text()">
-  <hr>
-  <table border="1">
-    <tr>
-      <th colspan="2">connection</th>
-    </tr>
-    <tr>
-      <th>connectionState</th>
-      <td id="connectionState">unknown</td>
-    </tr>
-    <tr>
-      <th>iceConnectionState</th>
-      <td id="iceConnectionState">unknown</td>
-    </tr>
-  </table>
+  <h2>Iniciador</h2>
 
+  <button id="btn-create-offer">Criar oferta</button>
+  <textarea id="output-offer" cols="30" rows="10"></textarea>
+
+  <h3>Iniciador - Aceitar Resposta</h3>
+
+  <textarea id="input-answer" cols="30" rows="10"></textarea>
+  <button id="btn-accept-answer">Aceita Resposta</button>
+
+  <hr>
+
+  <h2>Par</h2>
+
+  <textarea id="input-offer" cols="30" rows="10"></textarea>
+  <button id="btn-accept-offer">Aceitar oferta</button>
+
+  <h3>Par - Criar Resposta</h3>
+
+  <button id="btn-create-answer">Criar resposta</button>
+  <textarea id="output-answer" cols="30" rows="10"></textarea>
+
+  <hr>
+
+  <h2>Chat</h2>
+  <div id="chat-msg-history"></div>
+  <input type="text" id="chat-msg">
+  <button id="btn-send-chat-msg">Enviar mensagem</button>
+
+  <script src="vendor/webrtc-adapter-v7.7.1/adapter.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
