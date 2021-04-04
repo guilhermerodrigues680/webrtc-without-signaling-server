@@ -6,6 +6,7 @@
     "serve": "vue-cli-service serve",
     "http-server": "http-server --ssl --cert cert.pem --key key.pem dist",
     "build": "vue-cli-service build",
+    "build-gh-pages": "vue-cli-service build --dest docs",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {

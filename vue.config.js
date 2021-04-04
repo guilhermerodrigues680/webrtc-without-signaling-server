@@ -10,5 +10,6 @@ module.exports = {
       filename: 'index.html',
       title: 'WebRTC',
     }
-  }
+  },
+  publicPath: "",
 }
