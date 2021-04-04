@@ -3,6 +3,10 @@ node_modules
 /dist
 /ignore
 
+# Keys e Cerificate SSL
+/cert.pem
+/key.pem
+/keytmp.pem
 
 # local env files
 .env.local
